@@ -1,0 +1,25 @@
+{
+  "name": "hello-world",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^4.1.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/markwylde/hello-world.git"
+  },
+  "bugs": {
+    "url": "https://github.com/markwylde/hello-world/issues"
+  },
+  "homepage": "https://github.com/markwylde/hello-world#readme",
+  "description": ""
+}
