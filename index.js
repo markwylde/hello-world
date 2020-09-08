@@ -15,7 +15,7 @@ const server = http.createServer((request, response) => {
       </head>
 
       <body>
-        Hello from <strong>${hostname}</strong> at <strong>${new Date()}</strong>.
+        [testbranch] Hello from <strong>${hostname}</strong> at <strong>${new Date()}</strong>.
       </body>
     </html>
   `);
@@ -23,7 +23,7 @@ const server = http.createServer((request, response) => {
 });
 
 server.on('listening', () => {
-  console.log(`Server listening on port ${chalk.green(server.address().port)}`);
+  console.log(`[testbranch] Server listening on port ${chalk.green(server.address().port)}`);
 });
 
 server.listen(process.env.WEB_PORT || 8000);
