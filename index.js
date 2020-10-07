@@ -1,4 +1,5 @@
 const http = require('http');
+const https = require('https');
 const os = require('os');
 
 const chalk = require('chalk');
@@ -28,3 +29,8 @@ server.on('listening', () => {
 
 server.listen(process.env.WEB_PORT || 8000);
 
+setTimeout(() => {
+  https.request('https://example.com', function (response) {
+    response.on('data', buffer => console.log(buffer.toString()));
+  }).end();
+}, 3000);
