@@ -15,6 +15,18 @@ const server = http.createServer((request, response) => {
     process.exit(1);
   }
 
+  let message = '';
+  if (request.url.startsWith('/memory/')) {
+    const x = parseInt(request.url.substr('/memory/'.length));
+    console.log(`User requested to use some memory (${x} times}`);
+    const accumulation = [];
+
+    for (let i = 0; i < x; i++) {
+      accumulation.push('a');
+    }
+    message = `Added ${x} items to an array`;
+  }
+
   const hostname = os.hostname();
   console.log(`Incoming request from "${chalk.yellow(request.connection.remoteAddress)}" to "${chalk.yellow(`${request.method}:${request.url}`)}"`);
   response.writeHead(200, { 'content-type': 'text/html' });
@@ -26,11 +38,16 @@ const server = http.createServer((request, response) => {
       </head>
 
       <body>
+        <div style="background-color: yellow;">${message}</div>
         <p>Hello from <strong>${hostname}</strong> at <strong>${new Date()}</strong>.</p>
         <p>
           <ul>
             <li><a href="/quit/0">Quit Node App (Code 0)</a></li>
             <li><a href="/quit/1">Quit Node App (Code 1)</a></li>
+            <li><a href="/memory/1000">Increase memory (1000)</a></li>
+            <li><a href="/memory/1000000">Increase memory (1000000)</a></li>
+            <li><a href="/memory/10000000">Increase memory (10000000)</a></li>
+            <li><a href="/memory/100000000">Increase memory (100000000)</a></li>
           </ul>
         </p>
       </body>
