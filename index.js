@@ -50,6 +50,10 @@ const server = http.createServer((request, response) => {
             <li><a href="/memory/100000000">Increase memory (100000000)</a></li>
           </ul>
         </p>
+
+        <script>
+          window.history.pushState(null, null, '/');
+        </script>
       </body>
     </html>
   `);
