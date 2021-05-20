@@ -4,6 +4,30 @@ const os = require('os');
 const chalk = require('chalk');
 chalk.level = 3;
 
+setInterval(() => {
+  console.log({
+    type: 'test',
+    message: 'just testing logging a lot of data',
+    seriously: 'lots and lots and lots ' + Math.random()
+  });
+}, 400);
+
+setInterval(() => {
+  console.log({
+    type: 'test',
+    message: 'just testing logging a lot of data',
+    seriously: 'lots and lots and lots ' + Math.random()
+  });
+}, 600);
+
+setInterval(() => {
+  console.log({
+    type: 'test',
+    message: 'just testing logging a lot of data',
+    seriously: 'lots and lots and lots ' + Math.random()
+  });
+}, 650);
+
 const server = http.createServer((request, response) => {
   if (request.url === '/quit/0') {
     console.log('User requested exit (code 0)');
