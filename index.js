@@ -64,4 +64,4 @@ server.on('listening', () => {
   console.log(`Server listening on port ${chalk.green(server.address().port)}`);
 });
 
-server.listen(process.env.WEB_PORT || 8000);
+server.listen(process.env.PORT || 8000);
